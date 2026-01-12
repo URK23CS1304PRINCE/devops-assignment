@@ -1,0 +1,11 @@
+name: Product Service CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Product Service Image
+        run: docker build -t product-service ./microservices/product-service
